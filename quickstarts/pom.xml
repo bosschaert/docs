@@ -18,7 +18,7 @@
       <module>numberguess</module>
       <module>login</module>
       <module>kitchensink</module>
-      <module>osgibasic</module>
+      <module>helloworld-osgi</module>
    </modules>
    
 </project>

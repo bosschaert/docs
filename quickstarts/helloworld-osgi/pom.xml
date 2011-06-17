@@ -4,10 +4,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.jboss.as.quickstarts</groupId>
-  <artifactId>jboss-as-osgi-basic</artifactId>
+  <artifactId>jboss-as-helloworld-osgi</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
-  <name>JBoss AS Quickstarts: OSGi Basic</name>
+  <name>JBoss AS Quickstarts: Helloworld OSGi</name>
 
   <url>http://jboss.org/jbossas</url>
   <licenses>
@@ -37,10 +37,10 @@
         <configuration>
           <instructions>
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-            <Bundle-Activator>org.jboss.as.quickstarts.osgibasic.Activator</Bundle-Activator>
+            <Bundle-Activator>org.jboss.as.quickstarts.helloworld.osgi.Activator</Bundle-Activator>
             <Import-Package>*</Import-Package>
             <Export-Package/>
-            <Private-Package>org.jboss.as.quickstarts.osgibasic</Private-Package>
+            <Private-Package>org.jboss.as.quickstarts.helloworld.osgi</Private-Package>
           </instructions>
         </configuration>
       </plugin>
