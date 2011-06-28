@@ -24,7 +24,7 @@
       <dependency>
          <groupId>org.jboss.as.quickstarts</groupId>
          <artifactId>jboss-as-web-osgi-api-bundle</artifactId>
-         <version>${project.version}</version>
+         <version>7.0.0</version>
       </dependency>
    </dependencies>
    
