@@ -16,6 +16,7 @@
    <build>
       <resources>
          <resource>
+            <!-- Make sure the packageinfo file is included in the build -->
             <directory>${project.build.sourceDirectory}</directory>
             <includes>
                <include>**/packageinfo</include>
@@ -39,6 +40,16 @@
                </instructions>
             </configuration>
          </plugin>
+         
+         <!-- JBoss AS plugin to deploy artifact -->
+         <plugin>
+            <groupId>org.jboss.as.plugins</groupId>
+            <artifactId>jboss-as-maven-plugin</artifactId>
+            <version>7.0.0.Beta5-SNAPSHOT</version>
+            <configuration>
+               <filename>${project.build.finalName}.jar</filename>
+            </configuration>
+         </plugin>         
       </plugins>
    </build>
 </project>

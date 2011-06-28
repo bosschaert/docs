@@ -13,18 +13,22 @@
    <artifactId>jboss-as-web-osgi-svc-bundle</artifactId>
    <packaging>bundle</packaging>
 
-   <build>
-   <resources>
-               <resource>
-                <directory>${project.build.sourceDirectory}</directory>
-                <includes>
-                   <include>**/packageinfo</include>
-                </includes>
-            </resource>
-
-        </resources>
-
+   <dependencies>
+      <dependency>
+         <groupId>org.osgi</groupId>
+         <artifactId>org.osgi.core</artifactId>
+         <version>4.2.0</version>
+         <scope>provided</scope>
+      </dependency>
+      
+      <dependency>
+         <groupId>org.jboss.as.quickstarts</groupId>
+         <artifactId>jboss-as-web-osgi-api-bundle</artifactId>
+         <version>${project.version}</version>
+      </dependency>
+   </dependencies>
    
+   <build>   
       <plugins>
          <plugin>
             <groupId>org.apache.felix</groupId>
@@ -34,13 +38,23 @@
             <configuration>
                <instructions>
                   <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                  <Bundle-Activator>org.jboss.as.quickstarts.helloworld.osgi.Activator</Bundle-Activator>
+                  <Bundle-Activator>org.jboss.as.quickstarts.webosgi.svc.impl.Activator</Bundle-Activator>
                   <Import-Package>*</Import-Package>
                   <Export-Package />
-                  <Private-Package>org.jboss.as.quickstarts.helloworld.osgi</Private-Package>
+                  <Private-Package>org.jboss.as.quickstarts.webosgi.svc.impl</Private-Package>
                </instructions>
             </configuration>
          </plugin>
+
+         <!-- JBoss AS plugin to deploy artifact -->
+         <plugin>
+            <groupId>org.jboss.as.plugins</groupId>
+            <artifactId>jboss-as-maven-plugin</artifactId>
+            <version>7.0.0.Beta5-SNAPSHOT</version>
+            <configuration>
+               <filename>${project.build.finalName}.jar</filename>
+            </configuration>
+         </plugin>         
       </plugins>
    </build>
 </project>
