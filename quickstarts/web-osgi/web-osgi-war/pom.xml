@@ -17,7 +17,7 @@
       <dependency>
          <groupId>org.jboss.as.quickstarts</groupId>
          <artifactId>jboss-as-web-osgi-api-bundle</artifactId>
-         <version>7.0.0</version>
+         <version>${project.version}</version>
          <scope>provided</scope>
       </dependency>
 
@@ -55,7 +55,7 @@
                   <manifestEntries>
                      <!-- A problem here is that the META-INF/services directory 
                         is not placed in the correct position. Can we put it in the right place here? -->
-                     <Dependencies>org.osgi.core,org.jboss.modules,org.jboss.logging,deployment.jboss-as-web-osgi-api-bundle:7.0.0</Dependencies>
+                     <Dependencies>org.osgi.core,org.jboss.modules,org.jboss.logging,deployment.jboss-as-web-osgi-api-bundle:${project.version}</Dependencies>
                   </manifestEntries>
                </archive>
             </configuration>

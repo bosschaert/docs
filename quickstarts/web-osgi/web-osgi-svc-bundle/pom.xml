@@ -24,7 +24,7 @@
       <dependency>
          <groupId>org.jboss.as.quickstarts</groupId>
          <artifactId>jboss-as-web-osgi-api-bundle</artifactId>
-         <version>7.0.0</version>
+         <version>${project.version}</version>
       </dependency>
    </dependencies>
    
@@ -39,7 +39,7 @@
                <instructions>
                   <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                   <Bundle-Activator>org.jboss.as.quickstarts.webosgi.svc.impl.Activator</Bundle-Activator>
-                  <Import-Package>*</Import-Package>
+                  <Import-Package>org.jboss.as.quickstarts.webosgi.api,org.osgi.framework</Import-Package>
                   <Export-Package />
                   <Private-Package>org.jboss.as.quickstarts.webosgi.svc.impl</Private-Package>
                </instructions>
